@@ -135,29 +135,6 @@ python .\switch_codex_account.py --use "auth -work.json"
 
 命令行模式会校验账号文件是否为合法 JSON，但不会输出凭据内容。
 
-## Git 与隐私
-
-这个项目可以上传到 GitHub，但不要提交个人账号文件。
-
-仓库已经通过 `.gitignore` 默认排除以下内容：
-
-- `.venv/`
-- `accounts/*.json`
-- `accounts/account-meta.json`
-- `backups/`
-- 根目录误放的 `auth*.json`
-- Python 缓存文件
-
-`accounts/.gitkeep` 只是为了保留目录结构，不包含任何账号信息。
-
-上传前可以执行：
-
-```powershell
-git add --dry-run .
-```
-
-确认输出里没有真实账号 JSON、token、缓存或备份文件。
-
 ## 适用范围
 
 本工具面向 Windows 本地使用场景。它不会托管账号，也不会把账号文件上传到任何服务器。所有账号文件都保存在本机。
