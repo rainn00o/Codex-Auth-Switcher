@@ -1,0 +1,12 @@
+# Local Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Personal Codex account material
+accounts/*.json
+auth*.json
+backups/
+
+# Keep the ignored account folder available in fresh clones.
+!accounts/.gitkeep
