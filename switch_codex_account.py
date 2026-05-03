@@ -769,8 +769,10 @@ def run_gui() -> int:
 
             cards = tk.Frame(frame, bg=Theme.bg)
             cards.pack(fill=tk.X)
-            self.create_usage_card(cards, "5h", "5 小时窗口").pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 8))
-            self.create_usage_card(cards, "7d", "7 天窗口").pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(8, 0))
+            cards.columnconfigure(0, weight=1, uniform="usage_cards")
+            cards.columnconfigure(1, weight=1, uniform="usage_cards")
+            self.create_usage_card(cards, "5h", "5 小时窗口").grid(row=0, column=0, sticky="ew", padx=(0, 8))
+            self.create_usage_card(cards, "7d", "7 天窗口").grid(row=0, column=1, sticky="ew", padx=(8, 0))
 
         def create_usage_card(self, parent: tk.Frame, key: str, title: str) -> tk.Frame:
             card = tk.Frame(parent, bg=Theme.panel, highlightthickness=1, highlightbackground=Theme.border)
